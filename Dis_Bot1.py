@@ -223,4 +223,4 @@ async def _svf(ctx):
     embed.set_footer(text="Made by Reven8e with <3")
     await ctx.send(embed=embed)
 
-client.run("NjQ1OTQyNDQzNzUzMzQwOTQ3.Xwy8QQ.x5e2cOFKoGuYLb53tpqf9YXjH_A")
+client.run("Toekn")

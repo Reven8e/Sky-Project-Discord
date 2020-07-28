@@ -23,8 +23,8 @@ async def change_status():
 
 @client.event
 async def on_member_join(member : discord.member):
-    channel = client.get_channel(732548393024618506)
-    await channel.send(f'{member.mention} has **joined the server** {(str(member.created_at))}')
+    channel = client.get_channel(734398362635337768)
+    await channel.send(f'{member.mention} has **joined the server.** Created at- {(str(member.created_at))}')
 
 # member leaves
 
@@ -67,31 +67,29 @@ async def ping(ctx):
 
 @client.command(aliases=['howgay', 'gay'])
 async def _howgay (ctx, *, question):
+    embed = discord.Embed(colour= discord.Colour.green())
     responses = ['50%',
-                 '75$',
-                 '100$',
+                 '75%',
+                 '100%',
                  '150%',
                  '1000%']
-    if "703409174096117771" in question:
-        await ctx.send(f'Why you even try he will never be gay')
-    elif "641515058060460044" in question:
-        await ctx.send(f'Why you even try he is my owner he is not gay')
-    elif "650087046106447914" in question:
-        await ctx.send(f' He is the sexiest being in the all planet')
-    elif "312980623910371328" in question:
-        await ctx.send(f'999$')
-    else:
-        await ctx.send(f'{question} is {random.choice(responses)} gay')
+    embed.description = f'{question} is {random.choice(responses)} gay'
+    embed.set_footer(text="Made with <3 by Reven8e")
+    await ctx.send(embed = embed)
 
 @_howgay.error
 async def _howgay_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('``.howgay {mention}``')
+        embed = discord.Embed(colour= discord.Colour.red())
+        embed.description = '.howgay{mention}'
+        embed.set_footer(text="Made by Reven8e with <3")
+        await ctx.send(embed = embed)
 
 # ball
 
 @client.command(aliases=['ball', 'question'])
 async def _8ball (ctx, *, question):
+    embed = discord.Embed(colour=discord.Colour.green())
     responses = ['yes',
                  'no',
                  'yep',
@@ -99,13 +97,17 @@ async def _8ball (ctx, *, question):
                  'frick no',
                  'fuck yeah',
                  'idk']
-    await ctx.send(f'Question:{question} \n Answer: {random.choice(responses)}')
+    embed.add_field(name=f'Question: {question}', value=f'Answer: {random.choice(responses)}', inline=False)
+    embed.set_footer(text="Made with <3 by Reven8e")
+    await ctx.send(embed=embed)
 
 @_8ball.error
 async def _8ball_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('``.ball {question}``')
-
+        embed = discord.Embed(colour= discord.Colour.red())
+        embed.add_field(name=".ball {Question}", value= "Bot answers", inline=False)
+        embed.set_footer(text="Made with <3 by Reven8e")
+        await ctx.send(embed = embed)
 # purge
 
 @client.command()
@@ -223,4 +225,4 @@ async def _svf(ctx):
     embed.set_footer(text="Made by Reven8e with <3")
     await ctx.send(embed=embed)
 
-client.run("Toekn")
+client.run("NjQ1OTQyNDQzNzUzMzQwOTQ3.Xwy8QQ.x5e2cOFKoGuYLb53tpqf9YXjH_A")

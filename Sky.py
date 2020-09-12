@@ -3,7 +3,6 @@
 from discord.ext import tasks
 from itertools import cycle
 import discord
-import requests
 from discord.ext import commands
 from discord.utils import get
 import time
@@ -14,6 +13,7 @@ client = commands.Bot(command_prefix = '.')
 status = cycle(['Made by Reven8e', '<3'])
 client.remove_command('help')
 ROLE = "Sky"
+
 
 # Events
 
@@ -27,6 +27,7 @@ async def change_status():
 
 # Commands
 
+
 # Help
 
 @client.command()
@@ -39,23 +40,24 @@ async def help(ctx):
     embed.add_field(name='.howgay {@mention}', value="The bot answers if you're gay or not.", inline=False)
     embed.add_field(name='.ball {question}', value="The bot answers your questions with random answers.", inline=False)
     embed.add_field(name='.say {something}', value="The bot sends whatever you sends.", inline=False)
-    embed.add_field(name='.cat', value='Sends random cat pictures', inline=False)
-    embed.add_field(name='.meme', value='Sends random meme', inline=False)
+    embed.add_field(name='.cat', value='Sends random cat pictures.', inline=False)
+    embed.add_field(name='.meme', value='Sends random meme.', inline=False)
+    embed.add_field(name='.dox {@mention}', value='The bot sends fake dox.', inline=False)
     embed.add_field(name='.setup', value='Creates all the necessary stuff for the server.', inline=False)
     embed.add_field(name='.svf or .svrinfo', value='The bot sends info about the server.', inline=False)
     embed.add_field(name='.purge {number}', value='The bot deletes messages.', inline=False)
-    embed.add_field(name='.kick {@mention}', value='The bot kicks a member', inline=False)
-    embed.add_field(name='.ban {@mention}', value='The bot bans a member', inline=False)
-    embed.add_field(name='.unban {user#}', value='The bot unbans a member', inline=False)
-    embed.add_field(name='.mute {@mention}', value='The bot mutes a member', inline=False)
+    embed.add_field(name='.kick {@mention}', value='The bot kicks a member.', inline=False)
+    embed.add_field(name='.ban {@mention}', value='The bot bans a member.', inline=False)
+    embed.add_field(name='.unban {user#}', value='The bot unbans a member.', inline=False)
+    embed.add_field(name='.mute {@mention}', value='The bot mutes a member.', inline=False)
     embed.add_field(name='.unmute {@mention}', value='The bot unmuted a muted member.', inline=False)
     embed.add_field(name='.nuke', value='The bot nukes(recreate) a channel.', inline=False)
     embed.add_field(name='.warn {@mention}', value='The bot warns a member.', inline=False)
     embed.add_field(name='.addrole {@mention} {role}', value='The bot adds the member the role.', inline=False)
-    embed.add_field(name='.removerole {@mention} {role}', value='The bot removes the role from the member', inline=False)
-    embed.add_field(name='.verify {@member}', value='The bot verifies a member', inline=False)
-    embed.add_field(name='.ticket {Reason/Subject}', value='The bot creates a ticket', inline=False)
-    embed.add_field(name='.close', value='The bot closes a ticket', inline=False)
+    embed.add_field(name='.removerole {@mention} {role}', value='The bot removes the role from the member.', inline=False)
+    embed.add_field(name='.verify {@member}', value='The bot verifies a member.', inline=False)
+    embed.add_field(name='.ticket {Reason/Subject}', value='The bot creates a ticket.', inline=False)
+    embed.add_field(name='.close', value='The bot closes a ticket.', inline=False)
     embed.set_footer(text='© Sky - Made By Reven8e.sh#9290')
 
     await ctx.send(embed=embed)
@@ -67,7 +69,7 @@ async def setup(ctx):
     embed = discord.Embed(colour=discord.Colour.green())
 
     # Ticket System
-    embed.description= 'Do you want me to setup my ticket system? type y for YES and n for NO'
+    embed.description= 'Do you want me to setup my ticket system? Type y for YES and n for NO'
     await ctx.send(embed=embed)
     msg = await client.wait_for('message', timeout=30)
     if msg.content == "yes" or msg.content == "y":
@@ -83,7 +85,7 @@ async def setup(ctx):
         await ctx.send('Oke')
 
     # Mute System
-    embed.description = 'Do you want me to create ``Muted`` role for my mute system?'
+    embed.description = 'Do you want me to create ``Muted`` role for my mute system? Type y for YES and n for NO'
     await ctx.send(embed=embed)
     msg = await client.wait_for('message', timeout=30)
     if msg.content == "yes" or msg.content == "y":
@@ -97,7 +99,7 @@ async def setup(ctx):
         await ctx.send('Oke')
 
     # Verification System
-    embed.description = 'Do you want me to setup my verification system?'
+    embed.description = 'Do you want me to setup my verification system? Type y for YES and n for NO'
     await ctx.send(embed=embed)
     msg = await client.wait_for('message', timeout=30)
     if msg.content == "yes" or msg.content == "y":
@@ -121,8 +123,8 @@ async def setup(ctx):
     else:
         await ctx.send('Oke')
 
-    # Warning System
-    embed.description= 'Do you want me to setup my warning system?'
+# Warning System
+    embed.description= 'Do you want me to setup my warning system? Type y for YES and n for NO'
     await ctx.send(embed=embed)
     msg = await client.wait_for('message', timeout=30)
     if msg.content == "yes" or msg.content == "y":
@@ -171,6 +173,77 @@ async def _howgay_error(ctx, error):
         embed.set_footer(text='© Sky - Made By Reven8e.sh#9290')
 
         await ctx.send(embed = embed)
+
+# Dox
+
+@client.command()
+async def dox(ctx, *, user: discord.Member):
+    embed = discord.Embed(colour=discord.Colour.green())
+    responses1 = ['142',
+                  '153',
+                  '179',
+                  '196',
+                  '168',
+                  '158',
+                  '134',
+                  '176']
+
+    responses2 = ['246',
+                  '159',
+                  '169',
+                  '239',
+                  '276',
+                  '147',
+                  '308',
+                  '207']
+
+    countries = ['Mexico',
+                 'China',
+                 ' Australia',
+                 'Dominican Republic',
+                 'Mali, Algeria',
+                 'North Korea',
+                 'Sweden',
+                 'Swaziland',
+                 'Trinidad and Tobago',
+                 'Sierra Leone',
+                 'Togo',
+                 'Comoros',
+                 'Chad',
+                 'Estonia',
+                 'Taiwan',
+                 'United States',
+                 'Azerbaijan',
+                 'Central African Republic',
+                 'Gabon',
+                 'Namibia',
+                 'Lithuania,',
+                 'Germany',
+                 'United Kingdom',
+                 'Israel',
+                 'Russia',
+                 'Canada',
+                 'Alaska',
+                 'France',
+                 'UNKNOWN']
+
+    computer = ['Windows', 'Mac', 'Linux', 'IOS', 'Android', 'UNKNOWN']
+
+    embed.add_field(name=f':skull_crossbones: Doxxed {user} successfully\n  ㅤ', value=f"""{user} IP: **192.{random.choice(responses1)}.{random.choice(responses2)}**\n {user} country: **{random.choice(countries)}**\n{user} Computer: **{random.choice(computer)}**""", inline=False)
+    embed.add_field(name='  ㅤ', value='  ㅤ\nNOTE- This information is random and not REAL!', inline=True)
+    embed.set_footer(text='© Sky - Made By Reven8e.sh#9290')
+
+    await ctx.send(embed=embed)
+
+@dox.error
+async def dox_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        embed = discord.Embed(colour= discord.Colour.red())
+        embed.add_field(name=':x: **Dox Error**\n', value=' ㅤ\n``.dox {@mention}``', inline=False)
+        embed.set_footer(text='© Sky - Made By Reven8e.sh#9290')
+
+        await ctx.send(embed = embed)
+
 
 # 8ball
 

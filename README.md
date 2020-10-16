@@ -1,10 +1,10 @@
 # Sky-Project-Discord
 
-### Discord bot- prefixes can be changed, more than 20 commands.
+#### Discord bot- prefixes can be changed, more than 20 commands.
 
-#### Moderation Commands: Kick, Ban(member/id), Unban, Mute, Addrole and more.
+##### Moderation Commands: Kick, Ban(member/id), Unban, Mute, Addrole and more.
 
-#### General Commands: Meme gen, Cat pictures gen, Fortnite stats, howgay, say, ball and more.
+##### General Commands: Meme gen, Cat pictures gen, Fortnite stats, howgay, say, ball and more.
 
 ## Installation:
 

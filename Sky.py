@@ -660,4 +660,4 @@ async def meme(ctx):
 
 
 
-client.run("NjQ1OTQyNDQzNzUzMzQwOTQ3.XdJ6xw.H67qroWgDJj009UCRGOJyna_MNg")
+client.run("Your token")

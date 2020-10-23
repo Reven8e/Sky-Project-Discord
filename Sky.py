@@ -1,4 +1,4 @@
-# © Sky Bot- Discord.py
+# © Sky Bot- Discord.py- Made by Yuval Simon. For bogan.cool
 
 from discord.ext import tasks
 from itertools import cycle
